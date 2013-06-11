@@ -1,0 +1,33 @@
+var dict = new Dictionary<string, double>();
+var rmv = new List<string>();
+foreach(string line in File.ReadLines(@"D:\Documents\学校\作业\毕业设计\Emotion Computation\ontology.txt")) {
+	string[] cols = line.Split('\t');
+	int polar;
+	if (!int.TryParse(cols[6], out polar)) continue;
+	if (polar == 3 || polar == 0) continue;
+	if (polar == 2) polar = -1;
+	double score = double.Parse(cols[5]) / 10 * polar;
+	if (dict.ContainsKey(cols[0])) {
+		if (dict[cols[0]] != score) {
+			rmv.Add(cols[0]);
+		}
+	} else {
+		dict.Add(cols[0], score);
+	}
+}
+
+foreach(string s in rmv) dict.Remove(s);
+
+var fs = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Emotion Computation\bbs");
+string output = "total.emotion";
+using (var sw = new StreamWriter(output)) {
+foreach(var filename in fs) {
+	Console.WriteLine(filename);
+	string line = File.ReadAllText(filename);
+	double score = 0;
+	foreach(var pair in dict) {
+		if (line.ToLower().Contains(pair.Key.ToLower())) score += pair.Value;
+	}
+	sw.WriteLine(filename + "\t" + score);
+}
+}

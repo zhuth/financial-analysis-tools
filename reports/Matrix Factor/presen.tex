@@ -1,0 +1,192 @@
+\documentclass{beamer}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsfonts,amssymb}
+\usepackage{tikz}
+
+\usetheme{Warsaw}
+\begin{document}
+\title[Notes on Multi-view Matrix Factor]{Notes on Multi-view Matrix Factor}
+\author{Zhu Tianhua}
+\institute{09300240004}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{What we want to do}
+\begin{itemize}
+\item Given some observed vectors $X_1, X_2, ..., X_n \in \mathbb{R}^p$ and $Y_1, Y_2, ..., Y_n \in \mathbb{R}^q$, each $X_i$ and $Y_i$ are features for one object.
+\item Reduce dimension for $X$'s and $Y$'s.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ideas}
+\begin{itemize}
+\item Build three matrices, $P$, $A$ and $Q$, so that $\text{E}XY^\top \approx PAQ^\top$.
+\item $P \in \mathbb{R}^{p \times s}, Q \in \mathbb{R}^{q \times t}, A \in \mathbb{R}^{s \times t}$
+\item So that $\bar{X} = P^\top X = \arg \min_{x \in \mathfrak{X}}{[\mathfrak{L}_1(Px, X) + R_1(x)] \in \mathbb{R}^s}$. \\
+	$\mathfrak{L}_1$ is a loss function, and $R_1$ is a regularization parameter to encourage sparsity. $\mathfrak{X}$ is a subset of $\mathbb{R}^s$ \\
+	Similar conditions hold for $\bar{Y} = Q^\top Y$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Relation to two-view topic model}
+\begin{itemize}
+\item Consider two hidden random vectors $W \in \mathbb{R}^s$ and $Z \in \mathbb{R}^t$ that are unobserverd. \\
+	Due to symmetry, discussions about $Y$ is omitted here.
+\item $W$ is a posibility vector which means that $X$ is generated from a mixture $W$ over $s$ topics. Denote the probability of topic $l$ as $p_l(X)$, then we have
+\item $p(X|W) = \sum_{l=1}^s{W_lp_l(X)}$
+\item $p(X|W)$ is independent of $Y$ and $Z$, but $W$ and $Z$ are correlated.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Explaining $P$, $A$, and $Q$}
+So, we have:
+
+\begin{equation}
+\text{E}_{X, Y}{XY^\top}=\sum_{l,l'}{\text{E} W_l Z_{l'} \int X p_l(X) \int Y^\top q_{l'}(Y)}
+\end{equation}
+
+$P \in \mathbb{R}^{p \times s}$ satifies that $P[l,:]=\int X p_l (X)$
+
+$Q \in \mathbb{R}^{q \times t}$, $Q[l,:]=\int Y q_{l'} (Y)$.
+
+$A \in \mathbb{R}^{s \times t}$, $A_{l, l'}=\text{E}_{W,Z}{W_l Z_{l'}}$
+\end{frame}
+
+\begin{frame}
+\frametitle{Constraints on these three matrices}
+$A_{i,j} \ge 0$ and $\sum_{i,j}A_{i,j}=1$, measuring how topics are correlated.
+
+$P, Q \ge 0. ||P[l,:]||_1 = 1, ||Q[l',:]||_1=1$.
+
+\textbf{Consider the following optimization:}
+
+
+$L_1 = \lambda_1 \text{E}_X \inf_x{[\mathfrak{L}_1(Px,X)+R_1(x)]}$
+
+$L_2 = \lambda_2 \text{E}_Y \inf_y{[\mathfrak{L}_2(Qy,Y)+R_2(y)]}$
+
+$L_0 = \mathfrak{L}_0(PAQ^\top, \text{E}_{X,Y}{XT^\top}) + R_0(P,A,Q)$
+
+$min_{P, A, Q}{[ L_1 + L_2 + L_0 ]}$
+\end{frame}
+
+\begin{frame}
+\frametitle{Algorithm}
+\begin{equation}
+\text{E}_{X_j,Y_k}{X_j Y_k} = P^\top_j A Q_k, 1\le j \le p, 1 \le k \le q, A, P_j, Q_k \ge 0
+\end{equation}
+
+\begin{equation}
+[P, A, Q] = \arg \min_{P, A, Q} \sum_{j,k}(P_j^\top A Q_k - \text{E}X_j Y_k)^2
+\end{equation}
+
+and $||P||_0 \le u, ||Q||_0 \le v$
+
+Alternating least squares: Fix $P$, $A$, and solve for $Q$; then fix $P$, $Q$ for $A$, and $A$, $Q$ for $P$.
+
+Consider diagonal $A$ at first.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Least square}
+
+Denote $\Delta = PAQ^\top - \text{E}XY^\top$, so we have $L = \sum_{j,k}(P_j^\top A Q_k - \text{E}X_j Y_k)^2 = \text{trace}({\Delta \Delta^\top})$
+
+$\frac{\partial L}{\partial \Delta} = 2\Delta$, $\frac{\partial \Delta}{\partial P} = -AQ^\top$.
+
+Similar conclusions apply to $Q$.
+
+We have two ways to optimize $L$. One is to use Newton's method to solve the equation, solve alternatively for the three variables:
+
+\begin{equation}
+L(P, A, Q) = 0
+\end{equation}
+
+Another method is to solve equations $\frac{\partial L}{\partial \ast} = 0$, where $\ast$ stands for $P$, $Q$ and $A$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Lagrange multiplier}
+%(Something wrong here. I intended to find out how to `construct' a solution that meets with these constraints, only to find that our target is just finding out the solution strictly corresponding to these constraints which minimizes $L+R$.)
+
+Rewrite our target function $F$ as:
+
+\begin{equation}
+F = L + R + \mu (\sum_{i,j} A_{ij} - 1) + \sum_l {\nu_l (||P[l, :]||_1 - 1)} + \sum_{l'}{\kappa_{l'} (||Q[l', :]||_1 - 1)}
+\end{equation}
+
+So, we have:
+\begin{eqnarray}
+\frac{\partial F}{\partial P} = \frac{\partial (L + R)}{\partial P} + \sum_l{\nu_l sgn(P[l, :]) \textbf{1}^{p \times s}_l} = 0 \\
+\frac{\partial F}{\partial Q} = \frac{\partial (L + R)}{\partial Q} + \sum_{l'}{\kappa_{l'} sgn(Q[l', :]) \textbf{1}^{q \times t}_{l'}} = 0 \\
+\frac{\partial F}{\partial A} = \frac{\partial (L + R)}{\partial A} + \mu \textbf{1}_{t \times s} = 0
+\end{eqnarray}
+with all these constraints are simutaneous.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Algorithm (cont'd)}
+\textbf{Newton's Method} Take $P$ for example.
+\begin{equation}
+\nonumber
+\text{d}L = \sum_{j,k}{2(P^\top_j A Q_k - \text{E}X_j Y_k) \text{d}(P^\top_j A Q_k - \text{E}X_j Y_k)}
+\end{equation}
+$ = \sum_{j,k} 2 \Delta_{jk} \text{d}(P^\top_j A Q_k)$ \\
+$ = \sum_{j,k} 2 \Delta_{jk} \text{d}P^\top_j A Q_k = L$ \\
+$ \Rightarrow 2\Delta_{jk} \text{d}P^\top_j A Q_k = -\Delta_{jk}^2 $ \\
+$ \Rightarrow \text{d}P^\top_j A Q_k = -1/2\Delta_{jk} $ \\
+$ \Rightarrow \text{d}P^\top_j = -pinv(A Q_k) \Delta_{jk}/2 $ 
+% $ \Rightarrow \sum_{j,k} (P^\top_j A Q_k) \text{d}P^\top_j A Q_k = \sum_{j,k} \text{E}X_j Y_k \text{d}P^\top_j A Q_k $ \\
+\\
+Note: here $Q_k$ is the transpose of the $k$-th row in $Q$.
+\end{frame}
+
+\begin{frame}
+\frametitle{How to meet with the constraints?}
+\textbf{Constraints.} 
+\begin{eqnarray}
+A_{i,j} \ge 0, \sum_{i,j}A_{i,j}=1 \\
+P, Q \ge 0 \\
+||P[l,:]||_1 = 1 \\
+||Q[l',:]||_1=1
+\end{eqnarray}
+The last two constraints are relatively easy to hold. We calculate 1-norm for each line of $P$ or $Q$, and then divide this line by its 1-norm value, in each iteration. Such criteria will influence the accuracy (i.e., the value of $L$).
+
+Initialize $P$ and $Q$ with $\frac{1}{pq} \textbf{1}_{p \times s}$ and $\frac{1}{qt} \textbf{1}_{q \times t}$, respectively, will hold the second constraint in our experiment. \textbf{Note:} $P \in [0, 1]^p$, and $Q \in [0, 1]^q$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{How to meet with the constraints? (cont'd)}
+\begin{equation}
+\nonumber
+A_{i,j} \ge 0, \sum_{i,j}A_{i,j}=1
+\end{equation}
+The first part, in our experiment, also holds. But the second part, for the reason that we always use $A$ to hold the last two constraints, will not hold.
+
+This requires us to preprocess our inputs or our model to satisfy this criterion. Here we denote $\lambda^2$ for $\sum_{i,j}A_{i,j}$, so our model should be:
+
+\begin{equation}
+\text{E}_{X,Y}XY^\top = \lambda^2 P A Q^\top.
+\end{equation}
+
+And when projection is applied, we use $\lambda P^\top X$ for $\bar{X}$, and $\lambda Q^\top X$ for $\bar{Y}$.
+\end{frame}
+
+% \begin{frame}
+% \begin{center}
+% \huge Thank You!\\
+%  ~\\
+% \small Zhu Tianhua\\
+% 09300240004
+% \end{center}
+% \end{frame}
+
+\end{document}

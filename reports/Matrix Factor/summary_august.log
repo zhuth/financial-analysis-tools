@@ -1,0 +1,406 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.16)  16 NOV 2012 12:15
+entering extended mode
+**summary_august.tex
+("D:\Documents\—ß–£\◊˜“µ\±œ“µ…Ëº∆\Matrix Factor\summary_august.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+(D:\Programs\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\Programs\CTEX\MiKTeX\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\CJK.sty
+Package: CJK 2008/12/29 4.8.2
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\mule\MULEenc.sty
+Package: MULEenc 2008/12/29 4.8.2
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\CJK.enc
+File: CJK.enc 2008/12/29 4.8.2
+)
+LaTeX Info: Redefining \selectfont on input line 756.
+\CJK@indent=\box26
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2010/11/26 v0.05c Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\tools\multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count88
+\mult@box=\box27
+\multicol@leftmargin=\dimen105
+\c@unbalance=\count89
+\c@collectmore=\count90
+\doublecol@number=\count91
+\multicoltolerance=\count92
+\multicolpretolerance=\count93
+\full@width=\dimen106
+\page@free=\dimen107
+\premulticols=\dimen108
+\postmulticols=\dimen109
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box28
+\last@line=\box29
+\mult@rightbox=\box30
+\mult@grightbox=\box31
+\mult@gfirstbox=\box32
+\mult@firstbox=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\c@columnbadness=\count94
+\c@finalcolumnbadness=\count95
+\last@try=\dimen110
+\multicolovershoot=\dimen111
+\multicolundershoot=\dimen112
+\mult@nat@firstbox=\box51
+\colbreak@box=\box52
+)
+(D:\Programs\CTEX\UserData\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip45
+\subfigcapskip=\skip46
+\subfigcaptopadj=\dimen113
+\subfigbottomskip=\skip47
+\subfigcapmargin=\dimen114
+\subfiglabelskip=\skip48
+\c@subfigure=\count96
+\c@lofdepth=\count97
+\c@subtable=\count98
+\c@lotdepth=\count99
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(D:\Programs\CTEX\UserData\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip49
+\subfig@bottom=\skip50
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
+(D:\Programs\CTEX\UserData\tex\latex\listings\listings.sty
+\lst@mode=\count100
+\lst@gtempboxa=\box53
+\lst@token=\toks16
+\lst@length=\count101
+\lst@currlwidth=\dimen115
+\lst@column=\count102
+\lst@pos=\count103
+\lst@lostspace=\dimen116
+\lst@width=\dimen117
+\lst@newlines=\count104
+\lst@lineno=\count105
+\lst@maxwidth=\dimen118
+
+(D:\Programs\CTEX\UserData\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count106
+\lst@skipnumbers=\count107
+\lst@framebox=\box54
+)
+(D:\Programs\CTEX\UserData\tex\latex\listings\listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\UTF8\UTF8.bdg
+File: UTF8.bdg 2008/12/29 4.8.2
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\UTF8\UTF8.enc
+File: UTF8.enc 2008/12/29 4.8.2
+)
+(D:\Programs\CTEX\MiKTeX\tex\latex\cjk\UTF8\UTF8.chr
+File: UTF8.chr 2008/12/29 4.8.2
+)
+LaTeX Font Info:    Try loading font information for C70+song on input line 10.
+
+
+(D:\Programs\CTEX\CTeX\tex\latex\CJK\UTF8\c70song.fd
+File: c70song.fd 2009/09/23 4.8.2
+)
+("D:\Documents\—ß–£\◊˜“µ\±œ“µ…Ëº∆\Matrix Factor\summary_august.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(D:\Programs\CTEX\UserData\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen119
+\scratchbox=\box55
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen120
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks18
+)
+\c@lstlisting=\count114
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+ (D:\Programs\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+
+(D:\Programs\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1
+
+{D:/Programs/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}] [2
+] [3]
+Overfull \hbox (27.74889pt too wide) in paragraph at lines 175--176
+\C70/song/m/n/12/5b ˘ \C70/song/bx/n/12/4e é \C70/song/m/n/12/5c  \C70/song/m/
+n/12/89 ƒ \C70/song/m/n/12/6a ! \C70/song/m/n/12/76 Ñ \C70/song/bx/n/12/65 p \C
+70/song/bx/n/12/63 n \C70/song/bx/n/12/96 ∆ \C70/song/m/n/12/ff  \C70/song/m/n
+/12/52  + \C70/song/m/n/12/90 	 \C70/song/m/n/12/62 È \C70/song/bx/n/12/4e Ü\O
+T1/cmr/m/n/12 2007\C70/song/m/n/12/5e t\OT1/cmr/m/n/12 7\C70/song/bx/n/12/67 \
+OT1/cmr/m/n/12 1\C70/song/bx/n/12/65 Â \C70/song/m/n/12/ff ^\OT1/cmr/m/n/12 200
+9\C70/song/m/n/12/5e t\OT1/cmr/m/n/12 7\C70/song/bx/n/12/67 \OT1/cmr/m/n/12 1\
+C70/song/bx/n/12/65 Â \C70/song/m/n/12/30 \OT1/cmr/m/n/12 2008\C70/song/m/n/12
+/5e t\OT1/cmr/m/n/12 7\C70/song/bx/n/12/67 \OT1/cmr/m/n/12 1\C70/song/bx/n/12/
+65 Â
+ []
+
+
+Overfull \hbox (2.19324pt too wide) in paragraph at lines 175--176
+\C70/song/m/n/12/52 + \C70/song/m/n/12/8b ∞ \C70/song/bx/n/12/4e :\OT1/cmr/m/n/
+12 07\C70/song/m/n/12/30 \OT1/cmr/m/n/12 08\C70/song/m/n/12/30 \OT1/cmr/m/n/1
+2 09\C70/song/m/n/12/ff  \C70/song/m/n/12/59 Ç\OT1/cmr/m/n/12 12\C70/song/bx/n
+/12/65 / \C70/song/bx/n/12/80 ° \C70/song/bx/n/12/79 h \C70/song/bx/n/12/65 p \
+C70/song/bx/n/12/63 n \C70/song/bx/n/12/96 ∆ \C70/song/bx/n/12/57 (\OT1/cmr/m/n
+/12 2007\C70/song/m/n/12/ff ^\OT1/cmr/m/n/12 2009\C70/song/m/n/12/5e t \C70/son
+g/m/n/12/95 Ù \C70/song/m/n/12/76 Ñ \C70/song/bx/n/12/65 p \C70/song/bx/n/12/63
+ n \C70/song/m/n/12/ff  \C70/song/m/n/12/8b ∞ \C70/song/bx/n/12/4e :\OT1/cmr/m
+/n/12 S12-
+ []
+
+[4]
+Overfull \hbox (13.25279pt too wide) in paragraph at lines 195--196
+ \OT1/cmr/bx/n/12 LDA\C70/song/bx/n/12/6c ’[][][] \C70/song/m/n/12/5b ˘[][] \C7
+0/song/m/n/12/90 	 \C70/song/m/n/12/5b ö \C70/song/m/n/12/76 Ñ \C70/song/bx/n/1
+2/80 ° \C70/song/bx/n/12/4e ˜ \C70/song/m/n/12/72 y \C70/song/m/n/12/5f Å \C70/
+song/m/n/12/ff  \C70/song/m/n/12/8f – \C70/song/bx/n/12/88 L\OT1/cmr/m/n/12 LD
+A\C70/song/m/n/12/8f € \C70/song/bx/n/12/88 L \C70/song/bx/n/12/80 Z \C70/song/
+bx/n/12/7c { \C70/song/m/n/12/ff  \C70/song/m/n/12/90 	 \C70/song/bx/n/12/53 ÷
+ \C70/song/bx/n/12/67   \C70/song/bx/n/12/53 Ô \C70/song/bx/n/12/80 ˝ \C70/song
+/m/n/12/5c ^ \C70/song/bx/n/12/4e é \C70/song/m/n/12/76 Ñ\OT1/cmr/m/n/12 topic\
+C70/song/m/n/12/4f \
+ []
+
+[5] [6] [7] [8]
+("D:\Documents\—ß–£\◊˜“µ\±œ“µ…Ëº∆\Matrix Factor\summary_august.aux") ) 
+Here is how much of TeX's memory you used:
+ 4722 strings out of 494019
+ 65922 string characters out of 3148289
+ 128742 words of memory out of 3000000
+ 7915 multiletter control sequences out of 15000+200000
+ 50208 words of font info for 177 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 26i,6n,32p,628b,915s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Progr
+ams/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/tr
+uetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.
+ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/
+CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/ch
+inese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/P
+rograms/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/font
+s/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/sim
+sun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/C
+TEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetyp
+e/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><
+D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/
+fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese
+/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Progra
+ms/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/tru
+etype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.t
+tf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/C
+TeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chi
+nese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Pr
+ograms/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts
+/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/sims
+un.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CT
+EX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype
+/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D
+:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/f
+onts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/
+simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Program
+s/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/true
+type/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.tt
+f><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CT
+eX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chin
+ese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Pro
+grams/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/
+truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsu
+n.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTE
+X/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/
+chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:
+/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fo
+nts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/s
+imsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs
+/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truet
+ype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
+><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTe
+X/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chine
+se/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Prog
+rams/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/t
+ruetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun
+.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX
+/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/c
+hinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/
+Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fon
+ts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/si
+msun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/
+CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truety
+pe/chinese/simsun.ttf><D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf>
+<D:/Programs/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/CTeX
+/fonts/truetype/chinese/simsun.ttf><D:/Programs/CTEX/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><D:/Programs/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb><D:/Programs/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on summary_august.pdf (8 pages, 355609 bytes).
+PDF statistics:
+ 349 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,14 @@
+var fs = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Emotion Computation\bbs");
+var reg = new Regex(@"\d{4}-\d{2}-\d{2} \d{2}:\d{2}");
+string output = "total.dates";
+using (var sw = new StreamWriter(output)) {
+foreach(var filename in fs) {
+	Console.WriteLine(filename);
+	string[] lines = File.ReadAllLines(filename);
+	string score = "";
+	foreach(string line in lines) {
+		if (reg.IsMatch(line)) { score = reg.Matches(line)[0].ToString(); break; }
+	}
+	sw.WriteLine(filename + "\t" + score);
+}
+}
