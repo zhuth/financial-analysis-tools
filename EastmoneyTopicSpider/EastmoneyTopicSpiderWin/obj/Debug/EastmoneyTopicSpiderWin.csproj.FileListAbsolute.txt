@@ -1,0 +1,8 @@
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\bin\Debug\EastmoneyTopicSpiderWin.exe
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\bin\Debug\EastmoneyTopicSpiderWin.pdb
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.csprojResolveAssemblyReference.cache
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.Form1.resources
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.Properties.Resources.resources
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.csproj.GenerateResource.Cache
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.exe
+D:\Documents\学校\作业\毕业设计\Tools\EastmoneyTopicSpider\EastmoneyTopicSpiderWin\obj\Debug\EastmoneyTopicSpiderWin.pdb

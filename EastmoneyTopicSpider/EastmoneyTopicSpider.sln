@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EastmoneyTopicSpider", "EastmoneyTopicSpider.csproj", "{93AB0C9D-A740-4AD3-AA9D-EC2B12BDC574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EastmoneyTopicSpiderWin", "EastmoneyTopicSpiderWin\EastmoneyTopicSpiderWin.csproj", "{A367CFF0-0B80-46F3-B8A2-C66A3B9E15A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93AB0C9D-A740-4AD3-AA9D-EC2B12BDC574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AB0C9D-A740-4AD3-AA9D-EC2B12BDC574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AB0C9D-A740-4AD3-AA9D-EC2B12BDC574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AB0C9D-A740-4AD3-AA9D-EC2B12BDC574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A367CFF0-0B80-46F3-B8A2-C66A3B9E15A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A367CFF0-0B80-46F3-B8A2-C66A3B9E15A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A367CFF0-0B80-46F3-B8A2-C66A3B9E15A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A367CFF0-0B80-46F3-B8A2-C66A3B9E15A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
