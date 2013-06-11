@@ -1,0 +1,10 @@
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\bin\Debug\EmotionCalc.exe.config
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\bin\Debug\EmotionCalc.exe
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\bin\Debug\EmotionCalc.pdb
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\EmotionCalc.Form1.resources
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\EmotionCalc.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\EmotionCalc.exe
+C:\Documents and Settings\Administrator\桌面\EmotionCalc\EmotionCalc\obj\x86\Debug\EmotionCalc.pdb

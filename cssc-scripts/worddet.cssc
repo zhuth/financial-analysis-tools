@@ -1,0 +1,196 @@
+#reference System.Core.dll
+
+#function
+	public class WordDetector {
+
+		public Action ProcessOver = null;
+
+		internal struct CharPos {
+			public char ThisChar;
+			public bool PositionOnRight;
+
+			public CharPos(char value, bool positionOnRight)  {
+				this.ThisChar = value; this.PositionOnRight = positionOnRight;
+			}
+		}
+
+		public const int 	MaxWordLength	= 5,
+								MinFreq		= 10;
+		public const double PSvPThreshold	= 100,
+						 EntropyThreshold	= 1.0;
+
+		HashSet<string> finalWords = new HashSet<string>();
+		Dictionary<string, Dictionary<CharPos, int>> words = new Dictionary<string, Dictionary<CharPos, int>>();
+		Dictionary<string, int> freq = new Dictionary<string, int>();
+		Dictionary<string, double> ps = new Dictionary<string, double>();
+		Regex regSplit = new Regex(@"\W+|[a-zA-Z0-9]+", RegexOptions.Compiled | RegexOptions.Multiline);
+		StreamReader sr = null;
+		int total = 0;
+		string _filename = "";
+
+		public HashSet<string> FinalWords {
+			get {
+				return finalWords;
+			}
+		}
+
+		public Dictionary<string, int> Freq {
+			get {
+				return freq;
+			}
+		}
+
+		public WordDetector (string filename)
+		{
+			_filename = filename;
+			renewStreamReader();
+		}
+
+		private void renewStreamReader () {
+			sr = new StreamReader(_filename, CsSC.EncodingType.GetType(_filename));
+		}
+
+		public void StartProcess ()
+		{
+			System.Threading.Thread thr = new System.Threading.Thread(new System.Threading.ThreadStart(Process));
+			thr.Start();
+		}
+
+		private void wordInfoEntropy (string word, out double leftEntropy, out double rightEntropy)
+		{
+			leftEntropy = rightEntropy = 0;
+			double totalL = 0, totalR = 0;
+			foreach (KeyValuePair<CharPos, int> pair in words[word]) {
+				if (pair.Key.PositionOnRight) totalR += pair.Value; else totalL += pair.Value;
+			}
+
+			if (totalL <= 0) leftEntropy = double.MaxValue;
+			if (totalR <= 0) rightEntropy = double.MaxValue;
+
+			foreach (KeyValuePair<CharPos, int> pair in words[word]) {
+				double p;
+				if (pair.Key.PositionOnRight) {
+					p = (double)pair.Value / totalR;
+					rightEntropy -= p * Math.Log(p);
+				} else {
+					p = (double)pair.Value / totalL;
+					leftEntropy -= p * Math.Log(p);
+				}
+			}
+		}
+
+		public void Process ()
+		{
+			Console.WriteLine("Reading input...");
+			string line = "";
+			while ((line = sr.ReadLine()) != null) {
+				total += addParagraph (line);
+			}
+			finalizeParagraph ();
+			sr.Close ();
+
+			Console.WriteLine("Building candidate word list...");
+			foreach (KeyValuePair<string, double> pair in ps) {
+				if (pair.Key.Length < 2 || pair.Key.Length > MaxWordLength)
+					continue;
+				double p = 0;
+				for (int i=1; i<pair.Key.Length; ++i) {
+					double t = ps [pair.Key.Substring (0, i)] * ps [pair.Key.Substring (i)];
+					p = Math.Max (p, t);
+				}
+				if (freq [pair.Key] >= MinFreq && pair.Value / p > PSvPThreshold)
+					words.Add (pair.Key, new Dictionary<CharPos, int>());
+			}
+
+			renewStreamReader ();
+			Console.WriteLine("Preparing word/adjacent character list...");
+			
+			foreach(string cword in freq.Keys) {
+				string 	wl = cword.Length > 1 ? cword.Substring(1) : "",
+						wr = cword.Length > 1 ? cword.Substring(0, cword.Length - 1) : "",
+						wc = cword.Length > 2 ? cword.Substring(1, cword.Length - 1) : "";
+				CharPos c = new CharPos('a', false); int frq = freq[cword];
+				if (words.ContainsKey(wl)) {
+					c = new CharPos(cword[0], false);
+					if (words[wl].ContainsKey(c)) words[wl][c] += frq; else words[wl].Add(c, frq);
+				}
+				if (words.ContainsKey(wr)) {
+					c = new CharPos(cword[cword.Length - 1], true);
+					if (words[wr].ContainsKey(c)) words[wr][c] += frq; else words[wr].Add(c, frq);
+				}
+				if (words.ContainsKey(wc)) {
+					c = new CharPos(cword[0], false);
+					if (words[wc].ContainsKey(c)) words[wc][c] += frq; else words[wc].Add(c, frq);
+					c = new CharPos(cword[cword.Length - 1], true);
+					if (words[wc].ContainsKey(c)) words[wc][c] += frq; else words[wc].Add(c, frq);
+				}
+			}
+
+			Console.WriteLine("Calculating word information entropy...");
+			foreach (string word in words.Keys) {
+				double leftEntropy = 0, rightEntropy = 0;
+				wordInfoEntropy(word, out leftEntropy, out rightEntropy);
+				if (leftEntropy < EntropyThreshold || rightEntropy < EntropyThreshold)
+					continue;
+				finalWords.Add(word);
+			}
+
+			Console.WriteLine("Done. Writing results.");
+			if (ProcessOver != null)
+				ProcessOver.Invoke();
+		}
+
+		private int addParagraph (string paragraph)
+		{
+			int incr_total = 0;
+			foreach (string sentence in regSplit.Split(paragraph)) {
+				if (sentence.Length < 2) continue;
+				for (int i = 0; i<sentence.Length; ++i) {
+					for (int j = 1; j<=MaxWordLength+2 && i+j-1<sentence.Length; ++j) {
+						string word = sentence.Substring (i, j);
+						if (!freq.ContainsKey(word)) freq.Add(word, 0);
+						freq [word]++;
+						++incr_total;
+					}
+				}
+			}
+			return incr_total;
+		}
+
+		private void finalizeParagraph ()
+		{
+			foreach (string key in freq.Keys)
+				ps.Add (key, (double)freq [key] / total);
+		}
+
+		public void Close ()
+		{
+			sr.Close();
+		}
+
+	}
+
+	static WordDetector wordDetector = null;
+	static StreamWriter sw = null;
+	
+	private static void PrintResults ()
+	{
+		if (sw == null) return;
+		foreach (string word in wordDetector.FinalWords) {
+			sw.WriteLine("{0}\t{1}", word, wordDetector.Freq[word]);
+		}
+	}
+
+#endfunction
+
+if (args.Length < 2) {
+	Console.WriteLine("Usage: worddetector <input> <freq output>");
+	return;
+}
+
+wordDetector = new WordDetector(args[0]);
+//wordDetector.ProcessOver += PrintResults;
+sw = new StreamWriter(args[1]);
+wordDetector.Process();
+PrintResults();
+sw.Flush(); sw.Close();

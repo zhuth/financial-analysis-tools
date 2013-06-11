@@ -1,0 +1,11 @@
+D:\Studio\Bin\Debug\Demo.exe
+D:\Studio\Bin\Debug\Demo.pdb
+D:\Studio\WordSegment\DemoPG\obj\Debug\ResolveAssemblyReference.cache
+D:\Studio\WordSegment\DemoPG\obj\Debug\Demo.FormDemo.resources
+D:\Studio\WordSegment\DemoPG\obj\Debug\Demo.Properties.Resources.resources
+D:\Studio\WordSegment\DemoPG\obj\Debug\ResGen.read.1.tlog
+D:\Studio\WordSegment\DemoPG\obj\Debug\ResGen.write.1.tlog
+D:\Studio\WordSegment\DemoPG\obj\Debug\Demo.exe
+D:\Studio\WordSegment\DemoPG\obj\Debug\Demo.pdb
+D:\Studio\WordSegment\Release\Demo.exe
+D:\Studio\WordSegment\Release\Demo.pdb

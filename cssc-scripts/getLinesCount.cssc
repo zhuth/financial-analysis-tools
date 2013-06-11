@@ -1,0 +1,6 @@
+if (args.Length < 1) return;
+StreamReader sr = new StreamReader(args[0]);
+string doc = "";
+int count = 0;
+while ((doc = sr.ReadLine()) != null) ++count;
+Console.WriteLine(count);

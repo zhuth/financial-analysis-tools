@@ -1,0 +1,16 @@
+string[] list = Directory.GetFiles(@"D:\Projects\News");
+string path = @"D:\Projects\Tools\bin\wordsegment.exe";
+int i = 0;
+foreach(string s in list) {
+	if (s.EndsWith(".txt") && !s.EndsWith(".seg.txt")) {
+		string target = s.Substring(0, s.Length - 4) + ".seg.txt";
+		if (File.Exists(target)) continue;
+		Console.WriteLine("Processing " + s + "...");
+		System.Diagnostics.Process p = new System.Diagnostics.Process(); 
+		p.StartInfo.FileName = path;
+		p.StartInfo.Arguments = s + " " + target;
+		p.Start();
+		if (++i % 7 == 0) p.WaitForExit();
+	}
+}
+Console.ReadLine();

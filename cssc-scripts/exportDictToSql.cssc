@@ -1,0 +1,6 @@
+foreach(string line in File.ReadAllLines("guba_dict.fq")) {
+	var c = line.Split('\t');
+	int x = int.Parse(c[1]);
+	if (x > 1000)
+		Console.WriteLine("INSERT INTO `word_emotion`(`word`, `acc`, `cnt`, `freq`) VALUES('{0}',0,0,'{1}');", c[0], c[1]);
+}

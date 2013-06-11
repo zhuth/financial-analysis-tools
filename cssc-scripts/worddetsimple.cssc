@@ -1,0 +1,126 @@
+#reference System.Core.dll
+
+#function
+	public class WordDetector {
+
+		public Action ProcessOver = null;
+
+		internal struct CharPos {
+			public char ThisChar;
+			public bool PositionOnRight;
+
+			public CharPos(char value, bool positionOnRight)  {
+				this.ThisChar = value; this.PositionOnRight = positionOnRight;
+			}
+		}
+
+		public const int 	MaxWordLength	= 5,
+								MinFreq		= 10;
+
+		Dictionary<string, int> freq = new Dictionary<string, int>();
+		Regex regSplit = new Regex(@"\W+|[a-zA-Z0-9]+", RegexOptions.Compiled | RegexOptions.Multiline);
+		StreamReader sr = null;
+		int total = 0;
+		string _filename = "";
+
+		public IEnumerable<string> FinalWords {
+			get {
+				foreach(var pair in freq) {
+					if (pair.Value > MinFreq) yield return pair.Key;
+				}
+			}
+		}
+
+		public Dictionary<string, int> Freq {
+			get {
+				return freq;
+			}
+		}
+
+		public WordDetector (string filename)
+		{
+			_filename = filename;
+			renewStreamReader();
+		}
+
+		private void renewStreamReader () {
+			sr = new StreamReader(_filename, CsSC.EncodingType.GetType(_filename));
+		}
+
+		public void StartProcess ()
+		{
+			System.Threading.Thread thr = new System.Threading.Thread(new System.Threading.ThreadStart(Process));
+			thr.Start();
+		}
+
+		public void Process ()
+		{
+			Console.WriteLine("Reading input...");
+			string line = "";
+			while ((line = sr.ReadLine()) != null) {
+				total += addParagraph (line);
+			}
+			finalizeParagraph ();
+			sr.Close ();
+
+			Console.WriteLine("Building candidate word list...");
+			
+			renewStreamReader ();
+
+			Console.WriteLine("Done. Writing results.");
+			if (ProcessOver != null)
+				ProcessOver.Invoke();
+		}
+
+		private int addParagraph (string paragraph)
+		{
+			int incr_total = 0;
+			foreach (string sentence in regSplit.Split(paragraph)) {
+				if (sentence.Length < 2) continue;
+				for (int i = 0; i<sentence.Length; ++i) {
+					for (int j = 1; j<=MaxWordLength+2 && i+j-1<sentence.Length; ++j) {
+						string word = sentence.Substring (i, j);
+						if (!freq.ContainsKey(word)) freq.Add(word, 0);
+						freq [word]++;
+						++incr_total;
+					}
+				}
+			}
+			return incr_total;
+		}
+
+		private void finalizeParagraph ()
+		{
+		}
+
+		public void Close ()
+		{
+			sr.Close();
+		}
+
+	}
+
+	static WordDetector wordDetector = null;
+	static StreamWriter sw = null;
+	
+	private static void PrintResults ()
+	{
+		if (sw == null) return;
+		foreach (string word in wordDetector.FinalWords) {
+			sw.WriteLine("{0}\t{1}", word, wordDetector.Freq[word]);
+		}
+	}
+
+#endfunction
+
+if (args.Length < 2) {
+	Console.WriteLine("Usage: worddetector <input> <freq output>");
+	return;
+}
+
+wordDetector = new WordDetector(args[0]);
+//wordDetector.ProcessOver += PrintResults;
+sw = new StreamWriter(args[1]);
+wordDetector.Process();
+PrintResults();
+sw.Flush(); sw.Close();

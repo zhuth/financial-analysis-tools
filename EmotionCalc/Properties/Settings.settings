@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EmotionCalc.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="folderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="listPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="pdPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="d1" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2013-05-21</Value>
+    </Setting>
+    <Setting Name="d2" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2013-05-21</Value>
+    </Setting>
+    <Setting Name="cost" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.1</Value>
+    </Setting>
+    <Setting Name="e1" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2013-05-21</Value>
+    </Setting>
+    <Setting Name="e2" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2013-05-21</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

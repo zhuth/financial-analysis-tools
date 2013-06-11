@@ -1,0 +1,35 @@
+#reference D:\Projects\Tools\bin\MySqlConnector.exe
+#using MySqlConnector;
+#using System.Collections.Generic;
+
+string dateSince = "20100701", dateUntil = "20120630";
+
+if (args.Length >= 2) {
+	dateSince = args[0]; dateUntil = args[1];
+}
+
+string sql = "SELECT `date`, `title`, `content` FROM `{0}` WHERE `date` >= '" + dateSince + "' and `date` <= '" + dateUntil + "'";
+
+Regex reg = new Regex("[0-9]{6}");
+MySqlDB.Connect("stockdata");
+foreach(string setname in new string[]{"S12", "S50", "R50", "S100", "S500"}) {
+	string[] list = Directory.GetFiles(@"D:\Projects\Data\" + setname + @"\data");
+	string newspath = @"D:\Projects\Data\" + setname + @"\news\";
+	foreach(string s in list) {
+		if (!reg.IsMatch(s)) continue;
+		string code = reg.Match(s).Groups[0].Value;
+		if (code[0] == '6') code = "sh" + code; else code = "sz" + code;
+		string t = s.Substring(s.LastIndexOf('\\') + 1); t = t.Substring(0, t.IndexOf('.'));
+		if (!Directory.Exists(newspath)) Directory.CreateDirectory(newspath);
+		using(StreamWriter sw = new StreamWriter(newspath + t + ".txt")) {
+			List<string[]> res = MySqlDB.ExecuteQuery(String.Format(sql, code));
+			for(int i = 0; i < res.Count; ++i) {
+				sw.Write(res[i][0]);
+				for(int j = 1; j < res[i].Length; ++j) {
+					sw.Write("\t" + res[i][j]);
+				}
+				sw.WriteLine();
+			}
+		}
+	}
+}

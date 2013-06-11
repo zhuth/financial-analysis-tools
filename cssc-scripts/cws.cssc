@@ -1,0 +1,52 @@
+#reference D:\Documents\学校\作业\毕业设计\Tools\bin\PanGu.dll
+
+Console.WriteLine("PanGu Word Segment");
+
+string input = "", output = "";
+if (args.Length >= 2)
+{
+	input = args[0];
+	output = args[1];
+}
+else {
+	Console.WriteLine("Usage: cssc cws <input> <output> [-pos]");
+	return;
+}
+
+bool showPosition = args.Length >= 3 && args[2] == "-pos";
+
+// init
+
+PanGu.Segment.Init();
+PanGu.Match.MatchOptions options = PanGu.Setting.PanGuSettings.Config.MatchOptions;
+PanGu.Match.MatchParameter parameters = PanGu.Setting.PanGuSettings.Config.Parameters;
+
+using (System.IO.StreamWriter sw = new System.IO.StreamWriter(output))
+{
+	foreach (string doc in System.IO.File.ReadAllLines(input))
+	{
+		Segment segment = new Segment();
+		ICollection<WordInfo> words = segment.DoSegment(doc, options, parameters);
+
+		StringBuilder wordsString = new StringBuilder();
+		foreach (WordInfo wordInfo in words)
+		{
+			if (wordInfo == null)
+			{
+				continue;
+			}
+			if (showPosition)
+			{
+				wordsString.AppendFormat("{0}/({1},{2}) ", wordInfo.Word, wordInfo.Position, wordInfo.Rank);
+			}
+			else
+			{
+				wordsString.AppendFormat("{0} ", wordInfo.Word);
+			}
+		}
+
+		sw.WriteLine(wordsString);
+
+	}
+	sw.Flush(); sw.Close();
+}

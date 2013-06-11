@@ -1,0 +1,5 @@
+num_topics 3
+num_terms 6
+num_cited_docs 6
+alpha_cited 0.1000000000
+alpha_citing 0.1000000000

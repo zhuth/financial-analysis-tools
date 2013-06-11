@@ -1,0 +1,7 @@
+string[] list = Directory.GetFiles(@"D:\Projects\News\clean\");
+foreach(string s in list) {
+	if (s.EndsWith(".clean.txt")) {
+		string t = s.Substring(0, s.IndexOf('.')) + ".txt";
+		File.Move(s, t);
+	}
+}

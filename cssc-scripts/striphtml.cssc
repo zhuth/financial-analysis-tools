@@ -1,0 +1,60 @@
+#using System.Text.RegularExpressions;
+
+var files = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Emotion Computation\bbs");
+
+#function
+public static string StripHtml(string source)
+{
+try
+{
+string result = source;
+result = Regex.Replace(result, @"( )+", " ");
+result = Regex.Replace(result, @"<( )*head([^>])*>","<head>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"(<( )*(/)( )*head( )*>)","</head>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(<head>).*(</head>)",string.Empty, RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*script([^>])*>","<script>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"(<( )*(/)( )*script( )*>)","</script>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"(<script>).*(</script>)",string.Empty, RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*style([^>])*>","<style>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"(<( )*(/)( )*style( )*>)","</style>", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(<style>).*(</style>)",string.Empty, RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*td([^>])*>","\t", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*br( )*>","\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*li( )*>","\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*div([^>])*>","\r\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*tr([^>])*>","\r\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<( )*p([^>])*>","\r\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<[^>]*>",string.Empty, RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&nbsp;"," ", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&bull;"," * ", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&lsaquo;","<", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&rsaquo;",">", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&trade;","(tm)", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&frasl;","/", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"<","<", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @">",">", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&copy;","(c)", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&reg;","(r)", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, @"&(.{2,6});",string.Empty, RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\r)( )+(\r)","\r\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\t)( )+(\t)","\t\t", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\t)( )+(\r)","\t\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\r)( )+(\t)","\r\t", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\r)(\t)+(\r)","\r\r", RegexOptions.IgnoreCase);
+result = Regex.Replace(result, "(\r)(\t)+","\r\t", RegexOptions.IgnoreCase);
+return result;
+}
+catch
+{
+//MessageBox.Show("Error");
+return source;
+}
+
+}
+#endfunction
+
+foreach(var f in files) {
+	string txt = File.ReadAllText(f, Encoding.GetEncoding("GBK"));
+	txt = StripHtml(txt);
+	File.WriteAllText(f, txt);
+}

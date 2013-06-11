@@ -1,0 +1,47 @@
+# Project: link_plsa_lda
+# Makefile created by Dev-C++ 5.4.0
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = cokus.o utils.o lda-alpha.o lda-data.o lda-estimate.o lda-inference.o lda-model.o $(RES)
+LINKOBJ  = cokus.o utils.o lda-alpha.o lda-data.o lda-estimate.o lda-inference.o lda-model.o $(RES)
+LIBS     = -L"D:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -g3
+INCS     = -I"D:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"D:/Programs/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = link_plsa_lda.exe
+CXXFLAGS = $(CXXINCS)  -g3
+CFLAGS   = $(INCS)  -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+cokus.o: cokus.c
+	$(CC) -c cokus.c -o cokus.o $(CFLAGS)
+
+utils.o: utils.c
+	$(CC) -c utils.c -o utils.o $(CFLAGS)
+
+lda-alpha.o: lda-alpha.c
+	$(CC) -c lda-alpha.c -o lda-alpha.o $(CFLAGS)
+
+lda-data.o: lda-data.c
+	$(CC) -c lda-data.c -o lda-data.o $(CFLAGS)
+
+lda-estimate.o: lda-estimate.c
+	$(CC) -c lda-estimate.c -o lda-estimate.o $(CFLAGS)
+
+lda-inference.o: lda-inference.c
+	$(CC) -c lda-inference.c -o lda-inference.o $(CFLAGS)
+
+lda-model.o: lda-model.c
+	$(CC) -c lda-model.c -o lda-model.o $(CFLAGS)

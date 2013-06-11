@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Demo">
+</Property><Property Name="Solution File" Value="D:\Studio\WordSegment\DemoPG\Demo.sln">
+</Property><Property Name="Date" Value="2012年8月28日">
+</Property><Property Name="Time" Value="16:02:54">
+</Property></Properties><Event ErrorLevel="0" Project="Demo" Source="Demo.csproj" Description="Project file successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Demo.csproj">
+</Event><Event ErrorLevel="0" Project="Demo" Source="FormDemo.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\FormDemo.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="FormDemo.Designer.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\FormDemo.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Program.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Properties\Settings.settings" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Demo" Source="display.ico" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\display.ico">
+</Event><Event ErrorLevel="0" Project="Demo" Source="FormDemo.resx" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\FormDemo.resx">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Properties\Resources.resx" Description="File successfully backed up as D:\Studio\WordSegment\DemoPG\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="1" Project="Demo" Source="Demo.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Demo.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Demo" Source="Demo.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Demo" Source="Demo.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

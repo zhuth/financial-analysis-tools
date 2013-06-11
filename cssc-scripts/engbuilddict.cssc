@@ -1,0 +1,17 @@
+Regex reg = new Regex("[a-z]+");
+
+Dictionary<string, bool> dict = new Dictionary<string, bool>();
+
+foreach(string f in Directory.GetFiles(".", "*.bsd")) {
+	foreach(var m in reg.Matches(File.ReadAllText(f).ToLower())) {
+		if (!dict.ContainsKey("" + m)) {
+			dict.Add("" + m, true);
+		}
+	}
+}
+
+using (var sw = new StreamWriter("dict.txt")) {
+foreach(string k in dict.Keys) {
+	sw.WriteLine(k);
+}
+}

@@ -1,0 +1,20 @@
+string[] list = Directory.GetFiles(@"D:\Projects\News\freq");
+Dictionary<string, int> dict = new Dictionary<string, int>();
+foreach(string s in list) {
+	foreach(string line in File.ReadAllLines(s)) {
+		if (line.IndexOf('\t') < 0) continue;
+		string[] cols = line.Split('\t');
+		int f = 0;
+		if (!int.TryParse(cols[1], out f)) continue;
+		if (dict.ContainsKey(cols[0])) {
+			dict[cols[0]] += f;
+		} else {
+			dict.Add(cols[0], f);
+		}
+	}
+}
+using (StreamWriter sw = new StreamWriter(@"D:\Projects\News\dict.txt")) {
+foreach(string k in dict.Keys) {
+	sw.WriteLine(k + "|0x0000|" + dict[k]);
+}
+}

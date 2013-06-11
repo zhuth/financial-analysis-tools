@@ -1,0 +1,45 @@
+#using System.Collections.Generic;
+#function
+/*
+static Dictionary<string, double> global_df = new Dictionary<string, double>();
+
+static void WriteResult() {
+	using (StreamWriter sw = new StreamWriter(@"D:\Documents\学校\作业\毕业设计\Data\News\idf_all.txt")) {
+		foreach(string s in global_df.Keys) {
+			sw.WriteLine(s + "\t" + global_df[s]);
+		}
+		sw.Flush(); sw.Close();
+	}
+}
+*/
+#endfunction
+
+#line 13
+string[] list = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Data\News\idf");
+string doc_path = @"D:\Documents\学校\作业\毕业设计\Data\News\clean\";
+int count = 0, doc_count = 0;
+foreach(string s in list) {
+	if (count % 10 == 9) { Console.WriteLine("Dealt with file {0}...", count + 1); }
+	++count;
+	string filename = s.Substring(s.LastIndexOf('\\') + 1);
+	filename = filename.Substring(0, filename.IndexOf('.'));
+	string doc_file = doc_path + filename + ".seg.clean.txt";
+	string[] lines = File.ReadAllLines(doc_file);
+	doc_count = lines.Length;
+	string[] idfs = File.ReadAllLines(s);
+	foreach(string idf in idfs) {
+		string[] cols = idf.Split('\t');
+		double tryout = 0;
+		if (double.TryParse(cols[0], out tryout)) continue;
+		if (cols.Length < 2) continue;
+		double doc_freq = 0;
+		if (!double.TryParse(cols[1], out doc_freq)) continue;
+		doc_freq = Math.Exp(-doc_freq) * doc_count;
+		if (global_df.ContainsKey(cols[0])) {
+			global_df[cols[0]] += doc_freq;
+		} else {
+			global_df.Add(cols[0], doc_freq);
+		}
+	} 
+}
+WriteResult();

@@ -1,0 +1,13 @@
+string[] list = Directory.GetFiles(@"D:\Documents\学校\作业\毕业设计\Data\News\clean", "*.seg.clean.txt");
+string path = @"D:\Documents\学校\作业\毕业设计\Tools\bin\tfidf.exe";
+int i = 0;
+foreach(string s in list) {
+	string target = s.Substring(0, s.IndexOf('.')) + ".idf.txt";
+	if (File.Exists(target)) continue;
+	System.Diagnostics.Process p = new System.Diagnostics.Process(); 
+	p.StartInfo.FileName = path;
+	p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+	p.StartInfo.Arguments = s + " " + target;
+	p.Start();
+	if (++i % 2 == 0) p.WaitForExit();
+}

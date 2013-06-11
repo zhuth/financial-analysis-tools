@@ -1,0 +1,55 @@
+﻿#using System.Collections.Generic;
+#using CsSC;
+
+#function
+static Dictionary<string, int> tf = new Dictionary<string, int>();
+
+static void WriteResult(StreamWriter sw) {
+	if (tf.Keys.Count == 0) return;
+	bool first = true;
+	foreach(string key in tf.Keys) {
+		if (first) { sw.Write(tf[key]); first = false; }
+		sw.Write("," + tf[key]);
+	}
+	sw.WriteLine();
+}
+#endfunction
+
+string input = "", output = "", dict = "";
+if (args.Length < 3) {
+	Console.WriteLine("Usage: cssc tf <dict> <input> <output>");
+	return;
+}
+
+dict = args[0]; input = args[1]; output = args[2];
+using (StreamReader sr = new StreamReader(dict, EncodingType.GetType(dict))) {
+	string line = "";
+	while ((line = sr.ReadLine()) != null) {
+		if (line.IndexOf('\t') > 0) line = line.Substring(0, line.IndexOf('\t'));
+		line = line.Trim();
+		if (line == "") continue;
+		if (tf.ContainsKey(line)) {
+			Console.WriteLine("Warning: `{0}' already exists in dictionary.", line);
+			continue;
+		}
+		tf.Add(line, 0);
+	}
+}
+
+using (StreamReader sr = new StreamReader(input, EncodingType.GetType(input))) {
+using (StreamWriter sw = new StreamWriter(output)) {
+	string word = "";
+	while (sr.Peek() >= 0) 
+	{
+		char current = (char)sr.Read();
+		if (current == ' ' || current == '\t') {
+			if (tf.ContainsKey(word)) tf[word]++;
+			word = ""; continue;
+		}
+		if (current == '\r' || current == '\n') {
+			WriteResult(sw); if (sr.Peek() == '\n') sr.Read();
+		}
+		word += current;
+	}
+}
+}

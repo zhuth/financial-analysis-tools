@@ -1,0 +1,40 @@
+#using System.Collections.Generic;
+
+#function
+	public static void RunSnippet()
+	{
+		string[] filenames = Directory.GetFiles(@"..\..\Data\Price\");
+		Random rand = new Random();
+		for (int i = 0; i < 500; ++i) {
+			int id = rand.Next(filenames.Length);
+			string filename = filenames[id];
+			File.Copy(filename, @"..\..\Data\TEMP\" + filename.Substring(filename.LastIndexOf('\\') + 1), true);
+		}
+	}
+	
+	public static void RunSnippet2()
+	{
+		string lines = "";
+		string input = "";
+		do {
+			input = Console.ReadLine();
+			lines += input + Environment.NewLine;
+		} while (input != "");
+		
+		Regex reg = new Regex(@"\d{6}|\\item");
+		char item = (char)('a');
+		
+		foreach(Match m in reg.Matches(lines)) {
+			if (m.ToString().Equals(@"\item")) {
+				item = (char)(item + 1);
+				continue;
+			}
+			string filename = m.ToString() + ".txt";
+			
+			File.Copy(@"..\..\Data\Price\" + filename, @"..\..\Data\TEMP\" + item + "-" + filename, true);
+		}
+		
+	}
+	
+#endfunction
+RunSnippet();
